@@ -12,4 +12,7 @@ curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o $FILE_NAME
 unzip $FILE_NAME
 sudo ./aws/install
 
+echo "Checking login..."
+aws sts get-caller-identity
+
 cd $PROJECT_ROOT
