@@ -69,3 +69,22 @@ When you're connected successfully you will see a resonse that looks like the fo
     "Arn": "arn:aws:iam::930057969344:user/tf-bootcamp"
 }
 ```
+
+## Terraform 
+
+### TF Registry 
+
+When looking for TF providers (interface to APIs) and modules (templates that allow you to recreate generally accepted pattern / use cases), you can find them on the [terraform registry site](https://registry.terraform.io/).
+
+The provider we have beem using from the registry is the [random provider](https://registry.terraform.io/providers/hashicorp/random/latest/docs/resources/string). We did this to create a random output and test terraform commands. 
+
+
+#### Key Terraform command 
+
+```
+terraform init  <!-- Initialise a repo to use terraform -->
+terraform plan  <!-- Plan a terraform build terraform to see changes to infra -->
+terraform apply --auto-approve  <!-- Apply terraform changes listed in the plan, automatically  -->
+terraform output random_bucket_name  <!-- Get terraform to log out a variable to console  -->
+```
+> After running these commands your terraform state will be saved to `terraform.tfstate` and `terraform.tfstate.backup` files. You can read these to see the same info as your terminal outputs e.g. `random_bucket_name`, but these should not be committed to git.
