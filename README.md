@@ -86,5 +86,8 @@ terraform init  <!-- Initialise a repo to use terraform -->
 terraform plan  <!-- Plan a terraform build terraform to see changes to infra -->
 terraform apply --auto-approve  <!-- Apply terraform changes listed in the plan, automatically  -->
 terraform output random_bucket_name  <!-- Get terraform to log out a variable to console  -->
+terraform destroy --auto-approve <!-- This will destroy your resources, again automatically -->
 ```
 > After running these commands your terraform state will be saved to `terraform.tfstate` and `terraform.tfstate.backup` files. You can read these to see the same info as your terminal outputs e.g. `random_bucket_name`, but these should not be committed to git.
+
+### Terraform de
