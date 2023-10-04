@@ -1,4 +1,13 @@
 terraform {
+  # Migrate state to tf cloud: https://developer.hashicorp.com/terraform/tutorials/cloud/cloud-migrate
+  cloud {
+    organization = "tf_bootcamp"
+
+    workspaces {
+      name = "terra-house-van"
+    }
+  }
+
   required_providers {
     random = {
       source  = "hashicorp/random"
