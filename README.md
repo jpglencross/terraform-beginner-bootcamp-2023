@@ -49,3 +49,23 @@ gp env HELLO='world'
 ```
 
 Or you can set non-secret env vars in `gitpod.yml`.
+
+## Installing AWS CLI
+
+AWS CLI is installed for this project and certain env vars need to be set to know which account and region you're using etc. [More info here](https://docs.aws.amazon.com/cli/latest/userguide/getting-started-install.html)
+
+We can check if our AWS creds are configured correctly by runnig the following command:
+
+```
+aws sts get-caller-identity
+```
+
+When you're connected successfully you will see a resonse that looks like the following:
+
+```
+{
+    "UserId": "AIDA5RC6GL3AOM7DCUREG",
+    "Account": "930057969344",
+    "Arn": "arn:aws:iam::930057969344:user/tf-bootcamp"
+}
+```

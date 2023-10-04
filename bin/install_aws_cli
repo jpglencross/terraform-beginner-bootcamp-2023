@@ -1,0 +1,18 @@
+#!/usr/bin/env bash
+
+cd /workspace
+
+FILE_NAME="awscliv2.zip"
+
+# Remove zip file and AWS folder in workspace
+rm -f "/workspace/$FILE_NAME"
+rm -r -f "/workspace/aws"
+
+curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o $FILE_NAME
+unzip $FILE_NAME
+sudo ./aws/install
+
+echo "Checking login..."
+aws sts get-caller-identity
+
+cd $PROJECT_ROOT
