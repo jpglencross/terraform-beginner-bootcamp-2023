@@ -90,4 +90,6 @@ terraform destroy --auto-approve <!-- This will destroy your resources, again au
 ```
 > After running these commands your terraform state will be saved to `terraform.tfstate` and `terraform.tfstate.backup` files. You can read these to see the same info as your terminal outputs e.g. `random_bucket_name`, but these should not be committed to git.
 
-### Terraform de
+### Terraform login
+
+In order to automate the login process we have created a script to login using a JSON file (`credentials.tfrc.json`) with an API token secret stored inside it. More details on this [can be found here](https://developer.hashicorp.com/terraform/cli/commands/login)
