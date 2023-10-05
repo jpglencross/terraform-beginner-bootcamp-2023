@@ -1,0 +1,14 @@
+#!/usr/bin/env bash
+
+# Define the alias you want to add
+NEW_ALIAS='alias tf="terraform"'
+
+# Check if the alias already exists in ~/.bash_profile
+if grep -q "$NEW_ALIAS" "$HOME/.bash_profile"; then
+  echo "Alias already exists in ~/.bash_profile. No changes made."
+else
+  # Add the alias to ~/.bash_profile
+  echo "$NEW_ALIAS" >> "$HOME/.bash_profile"
+  source "$HOME/.bash_profile"  # Reload the Bash profile to apply changes
+  echo "Alias added to ~/.bash_profile."
+fi
