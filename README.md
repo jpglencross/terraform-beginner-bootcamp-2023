@@ -1,3 +1,20 @@
+<!-- Table of Contents -->
+## Table of Contents
+
+- [Terraform Beginner Bootcamp 2023](#terraform-beginner-bootcamp-2023)
+- [Summary](#summary)
+  - [Install terraform cli](#install-terraform-cli)
+    - [Changing script perms](#changing-script-perms)
+  - [Working with env vars](#working-with-env-vars)
+    - [Persisting Gitpod secrets](#persisting-gitpod-secrets)
+  - [Installing AWS CLI](#installing-aws-cli)
+  - [Terraform](#terraform)
+    - [TF Registry](#tf-registry)
+      - [Key Terraform command](#key-terraform-command)
+    - [Terraform login](#terraform-login)
+
+<!-- Terraform Beginner Bootcamp 2023 -->
+
 # Terraform Beginner Bootcamp 2023
 
 ---
