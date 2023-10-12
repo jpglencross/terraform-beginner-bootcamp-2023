@@ -97,3 +97,15 @@ This allows us to use data from cloud resources, useful when we want to referenc
 E.g. when you're looking for your AWS account id then you can get it from `data.aws_caller_identity.current.account_id`
 
 [Data source docs](https://developer.hashicorp.com/terraform/language/data-sources)
+
+## Changing the lifecycle of resources
+
+lifecycle is a nested block that can appear within a resource block. The lifecycle block and its contents are meta-arguments, available for all resource blocks regardless of type.
+
+The arguments available within a lifecycle block are create_before_destroy, prevent_destroy, ignore_changes, and replace_triggered_by.
+
+[Lifecycle arguement](https://developer.hashicorp.com/terraform/language/meta-arguments/lifecycle)
+
+## Terraform Data
+
+The `terraform_data` implements the standard resource lifecycle, but does not directly take any other actions. You can use the terraform_data resource without requiring or configuring a provider. It is always available through a built-in provider with the source address terraform.io/builtin/terraform. https://developer.hashicorp.com/terraform/language/resources/terraform-data
