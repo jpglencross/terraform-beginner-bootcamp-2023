@@ -53,3 +53,24 @@ More details [here](https://developer.hashicorp.com/terraform/cli/import)
 ### Fix manual config changes
 
 If something happens that causes tf state to be out of sync with our deployed infra, running `tf plan` will corret that by re-introducing the missing state.
+
+### Fixing using terraform refresh
+
+https://developer.hashicorp.com/terraform/cli/commands/refresh
+
+
+## Module sources 
+
+Using the source we can import a module from mutliple places, e.g. tf registry, locally or github. Local examples here:
+
+```tf
+module "terrahouse_aws" {
+  source = "./modules/terrahouse_aws"
+
+  user_uuid = vars.user_uuid
+  bucket_name = vars.bucket_name
+}
+```
+
+https://developer.hashicorp.com/terraform/language/modules/sources#local-paths
+
