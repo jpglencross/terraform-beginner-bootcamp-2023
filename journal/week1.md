@@ -74,3 +74,18 @@ module "terrahouse_aws" {
 
 https://developer.hashicorp.com/terraform/language/modules/sources#local-paths
 
+
+## Referencing files within your file system
+
+In tf theres a special path variable that helps us reference the local path:
+
+- `path.module` - is the filesystem path of the module where the expression is placed. We do not recommend using path.module in write operations because it can produce different behavior depending on whether you use remote or local module sources. Multiple invocations of local modules use the same source directory, overwriting the data in path.module during each call. This can lead to race conditions and unexpected results.
+- `path.root` - is the filesystem path of the root module of the configuration.
+path.cwd is the filesystem path of the original working directory from where you ran Terraform before applying any -chdir argument. This path is an absolute path that includes details about the filesystem structure. It is also useful in some advanced cases where Terraform is run from a directory other than the root module directory. We recommend using path.root or path.module over path.cwd where possible.
+- `terraform.workspace` - is the name of the currently selected workspace.
+
+[Special path variables](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/s3_bucket_website_configuration)
+
+## Built in functions 
+
+[A list of TF built in functions](https://developer.hashicorp.com/terraform/language/functions)
