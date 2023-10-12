@@ -22,10 +22,10 @@ variable "index_html_path" {
   description = "Path to the index.html file"
   type        = string
 
-  # validation {
-  #   condition     = fileexists(var.index_html_path)
-  #   error_message = "The specified path to the index.html file does not exist or is not a valid file."
-  # }
+  validation {
+    condition     = fileexists(var.index_html_path)
+    error_message = "The specified path to the index.html file does not exist or is not a valid file."
+  }
 }
 
 
@@ -33,8 +33,8 @@ variable "error_html_path" {
   description = "Path to the error.html file"
   type        = string
 
-  # validation {
-  #   condition     = fileexists(var.error_html_path)
-  #   error_message = "The specified path to the error.html file does not exist or is not a valid file."
-  # }
+  validation {
+    condition     = fileexists(var.error_html_path)
+    error_message = "The specified path to the error.html file does not exist or is not a valid file."
+  }
 }

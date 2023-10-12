@@ -89,3 +89,11 @@ path.cwd is the filesystem path of the original working directory from where you
 ## Built in functions 
 
 [A list of TF built in functions](https://developer.hashicorp.com/terraform/language/functions)
+
+## Data sources
+
+This allows us to use data from cloud resources, useful when we want to reference them without importing.
+
+E.g. when you're looking for your AWS account id then you can get it from `data.aws_caller_identity.current.account_id`
+
+[Data source docs](https://developer.hashicorp.com/terraform/language/data-sources)
