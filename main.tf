@@ -1,33 +1,3 @@
-terraform {
-  # Migrate state to tf cloud: https://developer.hashicorp.com/terraform/tutorials/cloud/cloud-migrate
-  cloud {
-    organization = "tf_bootcamp"
-
-    workspaces {
-      name = "terra-house-van"
-    }
-  }
-
-  required_providers {
-    random = {
-      source  = "hashicorp/random"
-      version = "3.5.1"
-    }
-    aws = {
-      source  = "hashicorp/aws"
-      version = "5.19.0"
-    }
-  }
-}
-
-provider "aws" {
-  # Configuration options
-}
-
-provider "random" {
-  # Configuration options
-}
-
 # Bucket naming rules here: https://docs.aws.amazon.com/AmazonS3/latest/userguide/bucketnamingrules.html
 resource "random_string" "bucket_name" {
   length  = 32
@@ -41,11 +11,7 @@ resource "aws_s3_bucket" "example" {
   bucket = random_string.bucket_name.result
 
   tags = {
-    Name        = random_string.bucket_name.result
+    UserUuid        = var.user_uuid
     Environment = "Dev"
   }
-}
-
-output "random_bucket_name" {
-  value = random_string.bucket_name.result
 }
