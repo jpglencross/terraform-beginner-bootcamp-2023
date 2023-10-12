@@ -1,9 +1,18 @@
-# Random provider docs: https://registry.terraform.io/providers/hashicorp/random/latest/docs/resources/string
-resource "aws_s3_bucket" "website_bucket" {
-  bucket = var.bucket_name
+terraform {
+  # Migrate state to tf cloud: https://developer.hashicorp.com/terraform/tutorials/cloud/cloud-migrate
+  cloud {
+    organization = "tf_bootcamp"
 
-  tags = {
-    UserUuid        = var.user_uuid
-    Environment = "Dev"
+    workspaces {
+      name = "terra-house-van"
+    }
   }
+
+}
+
+module "terrahouse_aws" {
+  source = "./modules/terrahouse_aws"
+
+  user_uuid = var.user_uuid
+  bucket_name = var.bucket_name
 }
