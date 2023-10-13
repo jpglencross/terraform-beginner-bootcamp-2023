@@ -109,3 +109,19 @@ The arguments available within a lifecycle block are create_before_destroy, prev
 ## Terraform Data
 
 The `terraform_data` implements the standard resource lifecycle, but does not directly take any other actions. You can use the terraform_data resource without requiring or configuring a provider. It is always available through a built-in provider with the source address terraform.io/builtin/terraform. https://developer.hashicorp.com/terraform/language/resources/terraform-data
+
+## Provisioners
+
+These allow you to execute commands on compute instances for actions E.g. AWS CLI
+
+These are not recommended as this should be done with tools like Ansible, as this handles configuration management, but the ability exists.
+
+[More docs here](https://developer.hashicorp.com/terraform/language/resources/provisioners/syntax)
+
+### Local exec
+
+This will execute a command on the machine running the TF commands, e.g. terraform plan / apply. 
+
+### Remote exec
+
+This will run commands on a machine that you target, and you will need to provide creds e.g. ssh keys to access these.
