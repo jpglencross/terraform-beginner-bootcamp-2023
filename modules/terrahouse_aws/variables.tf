@@ -39,6 +39,11 @@ variable "error_html_path" {
   }
 }
 
+variable "assets_path" {
+  description = "Path to image assets"
+  type        = string
+}
+
 variable "content_version" {
   description = "Content Version (Positive Integer)"
   type        = number
