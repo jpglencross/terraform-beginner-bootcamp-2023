@@ -125,3 +125,9 @@ This will execute a command on the machine running the TF commands, e.g. terrafo
 ### Remote exec
 
 This will run commands on a machine that you target, and you will need to provide creds e.g. ssh keys to access these.
+
+## For each
+
+This allows you to itterate over conplex data types, this is mostly useful when you're creating multiple of a cloud resource and you want to reduce duplicating repetative terraform code.
+
+[For each docs](https://developer.hashicorp.com/terraform/language/meta-arguments/for_each)

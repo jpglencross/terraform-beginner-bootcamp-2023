@@ -14,6 +14,10 @@ variable "error_html_path" {
   type = string
 }
 
+variable "assets_path" {
+  type = string
+}
+
 variable "content_version" {
   type = number
 }

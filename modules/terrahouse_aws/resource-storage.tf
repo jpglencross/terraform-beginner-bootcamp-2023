@@ -78,3 +78,17 @@ resource "aws_s3_bucket_policy" "bucket_policy" {
 resource "terraform_data" "content_version" {
   input = var.content_version
 }
+
+# https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/s3_object
+resource "aws_s3_object" "my_objects" {
+  for_each = fileset("${var.assets_path}", "*.{jpg,jpeg,png,gif}")
+  bucket = aws_s3_bucket.website_bucket.id
+  key = "assets/${each.key}"
+  source = "${var.assets_path}/${each.key}"
+  etag = filemd5("${var.assets_path}/${each.key}")
+
+  lifecycle {
+    ignore_changes = [etag]
+    replace_triggered_by = [ terraform_data.content_version.output ]
+  }
+}
